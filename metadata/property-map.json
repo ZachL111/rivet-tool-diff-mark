@@ -1,0 +1,28 @@
+{
+  "repo": "rivet-tool-diff-mark",
+  "language": "Python",
+  "category": "CLI tools",
+  "goal": "Package a Python local lab for diff analysis with fixture event logs, golden state snapshots, and documented operating limits.",
+  "weights": {
+    "signal": 3,
+    "slack": 2,
+    "confidence": 1,
+    "drag": 5
+  },
+  "thresholds": {
+    "ship": 184,
+    "watch": 124
+  },
+  "properties": [
+    "raising signal cannot reduce score",
+    "raising drag cannot improve score",
+    "lane labels must match configured thresholds",
+    "golden fixture ids must remain unique"
+  ],
+  "fixture_files": [
+    "fixtures/golden/scoreboard.csv",
+    "fixtures/golden/lane-matrix.csv",
+    "fixtures/fuzz/mutations.csv",
+    "fixtures/fuzz/boundary-cases.jsonl"
+  ]
+}

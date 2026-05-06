@@ -61,3 +61,9 @@ foreach ($pathPattern in $knownPaths) {
 python -m unittest discover -s tests
 
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-rivet-tool-diff-detail.ps1
+
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-rivet-tool-diff-properties.ps1
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/check-rivet-tool-diff-golden.ps1
+if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
