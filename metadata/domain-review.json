@@ -1,0 +1,73 @@
+{
+  "repo": "rivet-tool-diff-mark",
+  "language": "Python",
+  "category": "CLI tools",
+  "goal": "Package a Python local lab for diff analysis with fixture event logs, golden state snapshots, and documented operating limits.",
+  "review_model": {
+    "terms": [
+      "file span",
+      "terminal width",
+      "argument risk",
+      "report density"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "file span",
+      "signal": 78,
+      "slack": 35,
+      "drag": 30,
+      "confidence": 75,
+      "score": 176,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "terminal width",
+      "signal": 63,
+      "slack": 45,
+      "drag": 18,
+      "confidence": 90,
+      "score": 207,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "argument risk",
+      "signal": 74,
+      "slack": 36,
+      "drag": 31,
+      "confidence": 68,
+      "score": 159,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "report density",
+      "signal": 73,
+      "slack": 29,
+      "drag": 22,
+      "confidence": 63,
+      "score": 172,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "file span",
+      "signal": 85,
+      "slack": 31,
+      "drag": 28,
+      "confidence": 74,
+      "score": 191,
+      "lane": "ship"
+    }
+  ]
+}
